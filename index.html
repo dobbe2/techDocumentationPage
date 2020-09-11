@@ -8,24 +8,24 @@
 </head>
 <body>
     <nav id="navbar">
-        <header>
-        CSS Animation Walkthrough
+        <header id="nav-header">
+        CSS Animation
         </header>
-        <ul>
-            <li>
+        <ul class="nav-ul">
+            <li class="nav-li">
                 <a href="#Introduction" class="nav-link">Introduction</a>
             </li>
-            <li>
-                <a href="#Keyframes" class="nav-link">Introduction</a>
+            <li class="nav-li">
+                <a href="#Keyframes" class="nav-link">Keyframes</a>
             </li>
-            <li>
-                <a href="#Keyframes" class="nav-link">Introduction</a>
+            <li class="nav-li">
+                <a href="#Sub-properties" class="nav-link">Sub-properties</a>
             </li>
-            <li>
-                <a href="#Keyframes" class="nav-link">Introduction</a>
+            <li class="nav-li">
+                <a href="#Multiple_steps" class="nav-link">Multiple Steps</a>
             </li>
-            <li>
-                <a href="#Keyframes" class="nav-link">Introduction</a>
+            <li class="nav-li">
+                <a href="#Multiple_animations" class="nav-link">Multiple animations</a>
             </li>
         </ul>
     </nav>
@@ -34,23 +34,74 @@
     <main id="main-doc">
         <section class="main-section" id="Introduction">
             <header>Introduction</header>
-            <p>Intro about Animations</p>
+            <p>The <code>animation</code> property in CSS can be used to animate many other CSS properties such as:</p>
+                <ul>
+                    <li class="main-li">color</li>
+                    <li class="main-li">background-color</li>
+                    <li class="main-li">height</li>
+                    <li class="main-li">width</li>
+                </ul>
+                <p>Each animation needs to be defined with the <code>@keyframes</code> at-rule which is then called with the animation property, like so: </p>
+            <p class="code-block"><code>.element { <br>
+                &emsp; animation: pulse 5s infinite;<br>
+              } <br> <br>
+              
+              @keyframes pulse { <br>
+                &emsp; 0% { <br>
+                    &emsp; &emsp; background-color: red; <br>
+                    &emsp; } <br>
+                    &emsp; 100% { <br>
+                    &emsp; &emsp;background-color: green; <br>
+                    &emsp; } <br>
+              }</code></p>
+              <p>From the code above, the background color of the .element changes from red to green over a span of 5 seconds, and repeats infinitly.</p>
         </section>
-        <section class="main-section" id="Properties">
-            <header>Properties</header>
-            <p>Property stuff</p>
+        <section class="main-section" id="Keyframes">
+            <header>Keyframes</header>
+            <p>Each <code>@keyframes</code> at-rule defines what should happen at specific moments during the <code>animation</code>. For example, 0% is the beginning of the animation and 100% is the end. These keyframes can then be controlled either by the shorthand animation property, or its eight sub-properties, to give more control over how those keyframes should be manipulated.</p>
         </section>
-        <section class="main-section" id="Lorem_Ipsum1">
-            <header><code>Lorem Ipsum1</code> </header>
-            <p>Lorem Ipsum</p>
+        <section class="main-section" id="Sub-properties">
+            <header>Sub-properties</header>
+            <p>There are 8 sub-properties that the animation property uses.</p>
+            <ul>
+                <li class="main-li"><code>animation-name</code>: declares the name of the <code>@keyframes</code> at-rule to manipulate.</li>
+                <li class="main-li"><code>animation-fill-mode</code>: sets which values are applied before/after the animation.</li>
+                <li class="main-li"><code>animation-duration</code>: the length of time it takes for an animation to complete one cycle.</li>
+                <li class="main-li"><code>animation-timing-function</code>: establishes preset acceleration curves such as <code>ease</code> or <code>linear</code>.</li>
+                <li class="main-li"><code>animation-delay</code>: the time between the element being loaded and the start of the animation sequence.</li>
+                <li class="main-li"><code>animation-direction</code>: sets the direction of the animation after the cycle. Its default resets on each cycle.</li>
+                <li class="main-li"><code>animation-iteration-count</code>: the number of times the animation should be performed.</li>
+                For example, you can set the last state of the animation to remain on screen, or you can set it to switch back to before when the animation began.</li>
+                <li class="main-li"><code>animation-play-state</code>: pause/play the animation.</li>
+            </ul>
         </section>
-        <section class="main-section" id="Lorem_Ipsum2">
-            <header>Lorem Ipsum2</header>
-            <p>Lorem Ipsum</p>
+        <section class="main-section" id="Multiple_steps">
+            <header>Multiple steps</header>
+            <p>If an animation has the same starting and ending properties, it’s useful to comma-separate the 0% and 100% values inside <code>@keyframes</code>:</p>
+            <p class="code-block">
+                <code>
+                @keyframes pulse { <br>
+                    &emsp; 0%, 100% {<br>
+                        &emsp;&emsp; background-color: yellow;<br>
+                    &emsp;}<br>
+                    &emsp;50% {<br>
+                    &emsp; &emsp; background-color: red;<br>
+                    &emsp;}<br>
+                  }<br>
+            </code>
+        </p>
+        
         </section>
-        <section class="main-section" id="Lorem_Ipsum3">
-            <header>Lorem Ipsum3</header>
-            <p>Lorem Ipsum</p>
+        <section class="main-section" id="Multiple_animations">
+            <header>Multiple animations</header>
+            <p>You can comma-separate the values to declare multiple animations on a selector as well. In the example below, we want to change the color of the circle in a <code>@keyframe</code> whilst also nudging it from side to side with another.</p>
+            <p class="code-block">
+                <code>.element { <br>
+                    &emsp; animation: <br>
+                    &emsp; &emsp; pulse 3s ease infinite alternate, <br>
+                    &emsp; &emsp; nudge 5s linear infinite alternate;<br>
+                  }</code>
+            </p>
         </section>
     </main>
 <!-- freecodecamp test script -->
