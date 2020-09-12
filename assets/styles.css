@@ -10,6 +10,7 @@ html {
     font-family: 'Times New Roman', Times, serif;
     background-color: #D8D9D7;
     color: #3D4037;
+    scroll-behavior:smooth
 }
 
 #navbar {
@@ -54,11 +55,11 @@ p{
 
 a{
     text-decoration: none;
-    color: black;
+    color: #3D4037;
 }
 
 a:visited{
-    color: #8A8C87;
+    color: #3D4037;
 }
 #main-doc {
     margin-left: 190px;
