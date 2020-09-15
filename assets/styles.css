@@ -1,18 +1,14 @@
-
-/* Color Theme Swatches in Hex */
-.Hudson.-1-hex { color: #A2A6A1; }
-.Hudson.-2-hex { color: #8A8C87; }
-.Hudson.-3-hex { color: #3D4037; }
-.Hudson.-4-hex { color: #D8D9D7; }
-.Hudson.-5-hex { color: #F2F2F2; }
-
 html {
     font-family: 'Times New Roman', Times, serif;
     background-color: #D8D9D7;
     color: #3D4037;
-    scroll-behavior:smooth
+    scroll-behavior:smooth;
+    max-width: 100%
 }
 
+body{
+    margin: 0 8px;
+}
 #navbar {
     position: fixed;
     left: 0;
@@ -42,7 +38,7 @@ p{
     padding: 20px 10px;
     margin: 0;
     border: black solid;
-    border-width: 1px 1px .5px 1px;
+    border-width: 1px 2px .5px 2px;
     font-size: 1.5em;
 }
 
